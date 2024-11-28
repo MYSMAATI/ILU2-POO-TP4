@@ -1,8 +1,8 @@
 package scenarioTest;
 
 import personnages.Gaulois;
-import produits.Poisson;
-import produits.Sanglier;
+import produit.Poisson;
+import produit.Sanglier;
 import villagegaulois.Etal;
 
 public class Scenario {
@@ -35,12 +35,12 @@ public class Scenario {
 		village.installerVendeur(etalSanglierAsterix, asterix, sangliersAsterix, 10);
 		village.installerVendeur(etalSanglierObelix, obelix, sangliersObelix, 8);
 		village.installerVendeur(etalPoisson, ordralfabetix, poissons, 5);
-
-		System.out.println(village);
-
-		village.acheterProduit("sanglier", 3);
-
-		System.out.println(village);
+//
+//		System.out.println(village);
+//
+//		village.acheterProduit("sanglier", 3);
+//
+//		System.out.println(village);
 	}
 
 }
