@@ -9,11 +9,34 @@ import villagegaulois.IVillage;
 
 public class Scenario {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {/*
+		IVillage village = new IVillage() {
+			
+
+			@Override
+			public <P extends IProduit> boolean installerVendeur(Etal<P> etal, Gaulois vendeur, P[] produit, int prix) {
+				
+				return false;
+			}
+
+			@Override
+			public void acheterProduit(String produit, int quantiteSouhaitee) {	
+			}
+			
+			public String toString(Etal[] marche) {
+				StringBuilder sortie = new StringBuilder();
+				
+				for(int i = 0; i < marche.length; i++) {
+					sortie.append(marche[i].etatEtal() + "\n");
+				}
+				
+				return sortie.toString();
+			}
+			
+		};
 
 
-
-
+		Etal[] marche = new Etal[3];
 		Gaulois ordralfabetix = new Gaulois("Ordralfabétix", 9);
 		Gaulois obelix = new Gaulois("Obélix", 20);
 		Gaulois asterix = new Gaulois("Astérix", 6);
@@ -51,7 +74,7 @@ public class Scenario {
 //
 //		village.acheterProduit("sanglier", 3);
 //
-//		System.out.println(village);
+//		System.out.println(village); */
 	}
 
 }

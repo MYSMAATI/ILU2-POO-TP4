@@ -11,7 +11,6 @@ public class ScenarioTest {
 	
 	IVillage village = new IVillage() {
 		
-		//Il n'y a pas d'implÃ©mentation de la classe village
 
 		@Override
 		public <P extends IProduit> boolean installerVendeur(Etal<P> etal, Gaulois vendeur, P[] produit, int prix) {
@@ -78,13 +77,13 @@ public class ScenarioTest {
 		Poisson poisson1 = new Poisson("lundi");
 		Poisson[] poissons = {poisson1};
 		
+		//Génère une NullPointerException
 		marche[0].installerVendeur(asterix, sangliersAsterix, 5);
 		marche[1].installerVendeur(asterix, sangliersObelix, 5);
 		marche[2].installerVendeur(ordralfabetix, poissons, 5);
 		
 		acheterProduit(marche, "sanglier", 3);
 		
-		//classe anonyme
 
 	}
 
