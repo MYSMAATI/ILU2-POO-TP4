@@ -28,6 +28,7 @@ public class Etal<T extends IProduit> implements IEtal {
 		this.vendeur = vendeur;
 		this.produits = produit;
 		this.quantiteDebutMarche = produit.length;
+		this.nbProduit = produit.length;
 		this.prix = prix;
 		this.etalOccupe = true;
 	}
@@ -48,9 +49,9 @@ public class Etal<T extends IProduit> implements IEtal {
 	@Override
 	public int acheterProduit(int quantiteSouhaite) {
 		int prixPaye = 0;
-		/*for (int i = nbProduit - 1; i > nbProduit - quantiteSouhaite - 1 || i > 1; i--) {
+		for (int i = nbProduit - 1; i > nbProduit - quantiteSouhaite - 1 || i > 1; i--) {
 			prixPaye += produits[i].calculerPrix(prix); //question 3.d
-		}*/
+		}
 		if (nbProduit >= quantiteSouhaite) {
 			nbProduit -= quantiteSouhaite;
 		} else {
@@ -63,8 +64,20 @@ public class Etal<T extends IProduit> implements IEtal {
 		return prix;
 	}
 	
+	@Override
 	public String etatEtal() {
-		return "";
+		StringBuilder chaine = new StringBuilder(vendeur.getNom());
+		if (nbProduit > 0) {
+			chaine.append(" vend ");
+			chaine.append(nbProduit + " produits :");
+			for (int i = 0; i < nbProduit; i++) {
+				chaine.append("\n- " + produits[i].decrireProduit());
+			}
+		} else {
+			chaine.append(" n'a plus rien à vendre.");
+		}
+		chaine.append("\n");
+		return chaine.toString();
 	}
 
 }

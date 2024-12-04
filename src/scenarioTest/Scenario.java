@@ -1,17 +1,18 @@
 package scenarioTest;
 
 import personnages.Gaulois;
+import produit.IProduit;
 import produit.Poisson;
 import produit.Sanglier;
 import villagegaulois.Etal;
+import villagegaulois.IVillage;
 
 public class Scenario {
 
 	public static void main(String[] args) {
 
-		// TODO Partie 4 : creer de la classe anonyme Village
 
-		// fin
+
 
 		Gaulois ordralfabetix = new Gaulois("Ordralfabétix", 9);
 		Gaulois obelix = new Gaulois("Obélix", 20);
@@ -32,9 +33,19 @@ public class Scenario {
 		Poisson poisson1 = new Poisson("lundi");
 		Poisson[] poissons = { poisson1 };
 
-		village.installerVendeur(etalSanglierAsterix, asterix, sangliersAsterix, 10);
-		village.installerVendeur(etalSanglierObelix, obelix, sangliersObelix, 8);
-		village.installerVendeur(etalPoisson, ordralfabetix, poissons, 5);
+		etalSanglierObelix.installerVendeur( obelix, sangliersObelix, 10);
+		etalSanglierAsterix.installerVendeur( asterix, sangliersAsterix, 8);
+		etalPoisson.installerVendeur(ordralfabetix, poissons, 5);
+		
+		System.out.println(etalSanglierAsterix.etatEtal());
+		System.out.println(etalSanglierObelix.etatEtal());
+		System.out.println(etalPoisson.etatEtal());
+		
+		System.out.println("A l'étal n°1, j'achète 2 sanglier pour " + etalSanglierAsterix.acheterProduit(2));
+		System.out.println("A l'étal n°2, j'achète 1 sanglier pour " + etalSanglierObelix.acheterProduit(1));
+		
+		System.out.println(etalSanglierAsterix.etatEtal());
+		System.out.println(etalSanglierObelix.etatEtal());
 //
 //		System.out.println(village);
 //
